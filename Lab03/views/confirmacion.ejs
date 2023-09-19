@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Confirmación de Matrícula</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        background-color: #f4f4f4;
+        font-family: Arial, sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container mt-5">
+      <div
+        class="text-white text-center p-4"
+        style="background-color: rgba(42, 178, 198, 0.8)"
+      >
+        <h1>Confirmación de Matrícula</h1>
+      </div>
+      <div
+        style="
+          background-color: #fff;
+          padding: 20px;
+          border: 1px solid #ddd;
+          border-radius: 5px;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        "
+      >
+        <h3>Detalles de Matrícula</h3>
+        <p>
+          ¡Su matrícula ha sido confirmada! Los siguientes son los detalles de
+          su matrícula:
+        </p>
+        <p><strong>Curso:</strong> <%= curso %></p>
+        <p><strong>Módulo:</strong> <%= modulo %></p>
+        <p><strong>Medio de Pago:</strong> <%= medioPago %></p>
+        <p><strong>Total a Pagar:</strong> <%= total %></p>
+        <!-- Mostrar información sobre el descuento si se aplicó -->
+        <% if (descuentoAplicado) { %>
+        <p><strong>Descuento Aplicado:</strong> Sí (10%)</p>
+        <% } else { %>
+        <p><strong>Descuento Aplicado:</strong> No</p>
+        <% } %>
+      </div>
+      <div
+        class="text-white text-center p-2 mt-4"
+        style="background-color: rgba(42, 178, 198, 0.8)"
+      >
+        ¡Gracias por matricularte en nuestro curso!
+      </div>
+    </div>
+  </body>
+</html>

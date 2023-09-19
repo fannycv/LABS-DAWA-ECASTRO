@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        background-image: url("https://cdn.pixabay.com/photo/2019/08/09/10/04/landscape-4394746_1280.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: center;
+        height: 100vh;
+        position: relative;
+      }
+
+      body::before {
+        content: "";
+        background-color: rgba(0, 0, 0, 0.6);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+      }
+
+      .card {
+        background-color: rgba(162, 233, 244, 0.8);
+        border: none;
+        margin-top: 100px;
+        max-width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 20px;
+        border-radius: 10px;
+      }
+
+      .avatar {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        margin: 0 auto 20px;
+        display: block;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 offset-md-4">
+          <div class="card">
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/6596/6596121.png"
+              alt="Avatar"
+              class="avatar"
+            />
+            <!-- Ruta de tu avatar -->
+            <h1 class="text-center">Inicio de Sesión</h1>
+            <hr />
+            <form action="/matriculas" method="post">
+              <div class="mb-3">
+                <label for="usuario" class="form-label">Usuario</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="usuario"
+                  name="usuario"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="contrasena" class="form-label">Contraseña</label>
+                <input
+                  type="password"
+                  class="form-control"
+                  id="contrasena"
+                  name="contrasena"
+                  required
+                />
+              </div>
+              <button type="submit" class="btn btn-primary w-100">
+                Ingresar
+              </button>
+            </form>
+            <div id="error-message" class="text-danger p-3 mt-2">
+              <% if (typeof error !== 'undefined') { %> <%= error %> <% } %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      // Obtener el campo oculto de error
+      const errorField = document.getElementById("error");
+
+      // Obtener el elemento de mensaje de error
+      const errorMessage = document.getElementById("error-message");
+
+      // Mostrar el mensaje de error si existe
+      if (errorField && errorField.value) {
+        errorMessage.style.display = "block";
+      }
+    </script>
+  </body>
+</html>
