@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <title>Calculadora y Procesador de Texto</title>
+  </head>
+  <body>
+    <div class="container mt-5">
+      <div class="row">
+        <div class="card col-sm-10">
+          <div class="card-header h3 text-center">Calculadora</div>
+          <div class="card-body p-5">
+            <form id="calculadoraForm">
+              <input type="number" id="numero1" placeholder="Número 1" />
+              <input type="number" id="numero2" placeholder="Número 2" />
+              <button
+                type="button"
+                onclick="realizarOperaciones()"
+                class="btn btn-info text-white"
+              >
+                Calcular
+              </button>
+            </form>
+            <div id="resultadoSuma"></div>
+            <div id="resultadoResta"></div>
+            <div id="resultadoMultiplicacion"></div>
+            <div id="resultadoDivision"></div>
+          </div>
+        </div>
+      </div>
+      <div class="row mt-5">
+        <div class="card col-sm-10">
+          <div class="card-header h3 text-center">Procesador de Texto</div>
+          <div class="card-body p-5">
+            <form id="textoForm">
+              <input type="text" id="textoEntrada" placeholder="Texto" />
+              <button
+                type="button"
+                onclick="procesarTexto()"
+                class="btn btn-info text-white"
+              >
+                Procesar
+              </button>
+            </form>
+            <div id="palabrasDiv"></div>
+            <div id="subcadenaDiv"></div>
+            <div id="textoSinEspaciosDiv"></div>
+            <div id="textoCapitalizadoDiv"></div>
+            <div id="textoMinusculasDiv"></div>
+            <div id="textoMayusculasDiv"></div>
+            <div id="cantidadCaracteresDiv"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Agrega el enlace al archivo JavaScript -->
+    <script src="script.js"></script>
+  </body>
+</html>
