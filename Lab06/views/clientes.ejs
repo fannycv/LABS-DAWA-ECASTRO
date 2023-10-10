@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title><%= title %></title>
+
+    <link href="css/styles.css" rel="stylesheet" />
+    <script
+      src="https://use.fontawesome.com/releases/v6.3.0/js/all.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body id="page-top">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand text-info" href="#page-top"
+          ><img
+            src="https://hotmart.s3.amazonaws.com/product_pictures/a84c29ca-236b-45d3-a579-4be179efeaa5/Designsemnome2.jpg"
+            alt="eCommVerse"
+          />eCommVerse</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          Menu
+          <i class="fas fa-bars ms-1"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+            <% menuItems.forEach(item=> { %>
+            <li class="nav-item">
+              <a class="nav-link" href="<%= item.link %>"> <%= item.text %> </a>
+            </li>
+            <% }); %>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <section class="page-section mt-4" id="about">
+      <div class="container">
+        <div class="text-center">
+          <h2 class="section-heading text-uppercase">Nuestros Clientes</h2>
+          <h3 class="section-subheading text-muted">
+            En eCommVerse, hemos tenido el privilegio de colaborar con una
+            variedad de empresas que han tenido éxito en línea. Algunos de
+            nuestros clientes destacados incluyen:
+          </h3>
+        </div>
+        <ul class="timeline">
+          <% clientes.forEach((cliente, index) => { %>
+          <li class="<%= index % 2 === 0 ? '' : 'timeline-inverted' %>">
+            <div class="timeline-image">
+              <img
+                class="rounded-circle img-fluid"
+                src="<%= cliente.image %>"
+                alt="..."
+              />
+            </div>
+            <div class="timeline-panel">
+              <div class="timeline-heading">
+                <h4 class="subheading"><%= cliente.name %></h4>
+              </div>
+              <div class="timeline-body">
+                <p class="text-muted"><%= cliente.description %></p>
+              </div>
+            </div>
+          </li>
+          <% }); %>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Footer-->
+    <footer class="footer py-4 bg-dark">
+      <div class="container">
+        <div class="row align-items-center text-white">
+          <div class="col-lg-4 text-lg-start">
+            Copyright &copy; <%= footer %> 2023
+          </div>
+          <div class="col-lg-4 my-3 my-lg-0">
+            <a
+              class="btn btn-dark btn-social mx-2"
+              href="#!"
+              aria-label="Twitter"
+              ><i class="fab fa-twitter"></i
+            ></a>
+            <a
+              class="btn btn-dark btn-social mx-2"
+              href="#!"
+              aria-label="Facebook"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a
+              class="btn btn-dark btn-social mx-2"
+              href="#!"
+              aria-label="LinkedIn"
+              ><i class="fab fa-linkedin-in"></i
+            ></a>
+          </div>
+          <div class="col-lg-4 text-lg-end text-white">
+            <a class="link-white text-decoration-none me-3" href="#!"
+              >Política de privacidad</a
+            >
+            <a class="link-white text-decoration-none" href="#!"
+              >Términos y Condiciones</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="js/scripts.js"></script>
+  </body>
+</html>

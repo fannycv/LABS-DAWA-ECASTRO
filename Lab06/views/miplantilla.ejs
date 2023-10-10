@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mi plantilla EJS</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body>
+    <div class="container mt-5">
+      <h1>Bienvenido a mi plantilla EJS</h1>
+      <p><%= mensaje %></p>
+      <h2 class="text-center m-5"><%= titulo %></h2>
+
+      <div class="row">
+        <% eventos.forEach(evento => { %>
+        <div class="col-md-4">
+          <div class="card" style="width: 18rem">
+            <img
+              src="<%= evento.ruta %>"
+              class="card-img-top"
+              alt="<%= evento.descimg %>"
+            />
+            <div class="card-body">
+              <h5 class="card-title"><%= evento.descripcion %></h5>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">Fecha: <%= evento.fecha %></li>
+                <li class="list-group-item">Hora: <%= evento.hora %></li>
+                <li class="list-group-item">Lugar: <%= evento.lugar %></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <% }); %>
+      </div>
+    </div>
+  </body>
+</html>
