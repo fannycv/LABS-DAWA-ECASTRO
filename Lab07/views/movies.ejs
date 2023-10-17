@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Peliculas Almacenadas</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link href="/css/style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="mb-5 text-white bg-dark p-4">Películas</h1>
+      <div class="row">
+        <% peliculas.forEach(function(pelicula) { %>
+        <div class="col-lg-4 mb-4">
+          <div class="card">
+            <img
+              src="<%= pelicula.imagen %>"
+              class="card-img-top"
+              alt="Imagen de la Película"
+            />
+            <div class="card-body">
+              <h6 class="card-title"><%= pelicula.titulo %></h6>
+              <p class="card-text">Director: <%= pelicula.director %></p>
+              <p class="card-text">Año: <%= pelicula.año %></p>
+            </div>
+          </div>
+        </div>
+        <% }); %>
+      </div>
+      <div class="text-center">
+        <a href="/" class="btn btn-info text-white">Agregar más películas</a>
+      </div>
+    </div>
+  </body>
+</html>
