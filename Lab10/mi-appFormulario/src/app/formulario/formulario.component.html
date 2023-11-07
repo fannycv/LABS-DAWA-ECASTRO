@@ -1,0 +1,102 @@
+<div class="container mt-5" style="height: 50vh">
+  <div
+    class="card p-4"
+    style="
+      width: 650px;
+      border-radius: 10px;
+      box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2);
+    "
+  >
+    <h2 class="mb-4 text-center">Formulario de Registro</h2>
+    <form (submit)="onSubmit()">
+      <div class="mb-3">
+        <label for="nombre" class="form-label">Nombre:</label>
+        <input
+          type="text"
+          class="form-control"
+          id="nombre"
+          [(ngModel)]="nombre"
+          name="nombre"
+          required
+          (input)="validateForm()"
+        />
+      </div>
+
+      <div class="mb-3">
+        <label for="email" class="form-label">Email:</label>
+        <input
+          type="email"
+          class="form-control"
+          id="email"
+          [(ngModel)]="email"
+          name="email"
+          required
+          (input)="validateForm()"
+        />
+      </div>
+
+      <button
+        type="button"
+        class="btn btn-info btn-block col-12 text-white"
+        [disabled]="!isFormValid"
+        (click)="showConfirmation()"
+      >
+        Enviar
+      </button>
+
+      <div class="alert alert-warning mt-3" role="alert" *ngIf="showAlert">
+        ¿Estás seguro de enviar el formulario?
+        <button
+          type="button"
+          class="btn btn-primary btn-sm ml-2 mx-3"
+          (click)="sendForm()"
+        >
+          Confirmar
+        </button>
+        <button
+          type="button"
+          class="btn btn-secondary btn-sm ml-2"
+          (click)="cancelForm()"
+        >
+          Cancelar
+        </button>
+      </div>
+
+      <div
+        *ngIf="showInvalidEmailAlert"
+        class="alert alert-danger mt-3"
+        role="alert"
+      >
+        Por favor, ingresa un correo electrónico válido.
+      </div>
+      <div
+        *ngIf="showIncompleteFieldsAlert"
+        class="alert alert-warning mt-3"
+        role="alert"
+      >
+        Por favor, completa todos los campos.
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="m-5 card" style="width: 720px">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let dato of datosIngresados; index as i">
+        <th scope="row">{{ i + 1 }}</th>
+        <td>
+          {{ dato.nombre }}
+        </td>
+        <td>{{ dato.email }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
