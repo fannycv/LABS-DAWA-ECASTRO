@@ -1,0 +1,30 @@
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-md-12 mt-4">
+      <h2>Tareas</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="container mt-4">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <input
+                [(ngModel)]="taskName"
+                placeholder="Nombre de la tarea"
+                class="form-control"
+              />
+            </div>
+            <button
+              (click)="addTask()"
+              class="btn btn-info text-white btn-block"
+            >
+              Agregar tarea
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

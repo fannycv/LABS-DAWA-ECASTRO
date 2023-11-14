@@ -1,0 +1,41 @@
+<div class="container mt-4" style="margin-left: 90px">
+  <div class="row">
+    <div class="col-md-6 mt-4">
+      <h2>Filtrado de tareas</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="container mt-4">
+        <div class="row">
+          <div class="col-md-12">
+            <div
+              class="btn-group d-flex flex-column"
+              role="group"
+              aria-label="Filtros de Tareas"
+            >
+              <button
+                (click)="selectFilter('all')"
+                class="btn btn-outline-info"
+              >
+                Todas las tareas
+              </button>
+              <button
+                (click)="selectFilter('completed')"
+                class="btn btn-outline-info"
+              >
+                Tareas completadas
+              </button>
+              <button
+                (click)="selectFilter('incomplete')"
+                class="btn btn-outline-info"
+              >
+                Tareas incompletas
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
