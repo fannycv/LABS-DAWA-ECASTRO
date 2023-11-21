@@ -1,0 +1,15 @@
+<div class="container mt-5">
+  <h2 class="text-center">Lista de publicaciones</h2>
+  <div class="list-group col-lg-8 mx-auto mt-4">
+    <a
+      *ngFor="let post of posts"
+      class="list-group-item list-group-item-action"
+      (click)="showPostDetails(post.id)"
+      onmouseover="this.style.backgroundColor='#83ffff'"
+      onmouseout="this.style.backgroundColor=''"
+    >
+      <h5 class="mb-1">{{ post.title }}</h5>
+      <p class="mb-1">{{ post.content }}</p>
+    </a>
+  </div>
+</div>

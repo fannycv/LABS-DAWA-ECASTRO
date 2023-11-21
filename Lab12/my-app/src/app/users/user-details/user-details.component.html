@@ -1,0 +1,14 @@
+<div class="container mt-5">
+  <div class="card col-lg-8 mx-auto mt-4">
+    <div class="card-body">
+      <h2 class="card-title mb-4">Detalles de usuario</h2>
+      <div *ngIf="user">
+        <p class="card-text"><strong>ID:</strong> {{ user.id }}</p>
+        <p class="card-text"><strong>Nombre:</strong> {{ user.name }}</p>
+      </div>
+      <div *ngIf="!user">
+        <p class="card-text">No user details available.</p>
+      </div>
+    </div>
+  </div>
+</div>
