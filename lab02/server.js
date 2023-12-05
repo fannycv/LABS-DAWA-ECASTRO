@@ -87,7 +87,7 @@ const server = http.createServer((req, res) => {
   }
 });
 
-const PORT = 3000;
+const PORT = 3200;
 server.listen(PORT, () => {
   console.log(`Servidor en funcionamiento en http://localhost:${PORT}`);
 });

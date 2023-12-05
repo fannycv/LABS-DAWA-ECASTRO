@@ -11,8 +11,7 @@ const routes: Routes = [
   { path: 'users/:id', component: UserDetailsComponent },
   { path: 'posts', component: PostListComponent },
   { path: 'posts/:id', component: PostDetailsComponent },
-  { path: 'not-found', component: NotFoundComponent },
-  { path: '**', redirectTo: '/not-found' },
+  { path: '**', component: NotFoundComponent },
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
